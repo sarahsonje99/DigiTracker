@@ -1,0 +1,91 @@
+<div class="container" *ngIf="bool1 != false">
+  <mat-toolbar>
+    <span>Registration</span>
+  </mat-toolbar>
+  <mat-card class="my-card">
+    <mat-card-content>
+      <form class="my-form">
+        <mat-form-field class="full-width">
+          <mat-label>Mobile Number</mat-label>
+          <input matInput placeholder="Mobile Number" name = "mobileNumber" [formControl]="mobileNumber" pattern="[0-9]+" maxlength="10" minlength="10" required>
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+    <div id="recaptcha-container"></div>
+    <mat-card-actions>
+      <button mat-raised-button (click)="mobile()" [disabled]="invalidMobile()!=true" color="primary">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<div class="container" *ngIf="bool2 != false">
+    <mat-toolbar>
+      <span>Registration</span>
+    </mat-toolbar>
+    <mat-card class="my-card">
+      <mat-card-content>
+        <form class="my-form">
+          <mat-form-field class="full-width">
+            <mat-label>OTP</mat-label>
+            <input matInput placeholder="OTP" name = "otpNumber" [formControl]="otpNumber" pattern="[0-9]+" maxlength="6" minlength="6" required>
+          </mat-form-field>
+        </form>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button (click)="otp()" [disabled]="invalidOtp()!=true" color="primary">Submit</button>
+      </mat-card-actions>
+    </mat-card>
+</div>
+
+<div class="container" *ngIf="bool3 != false">
+    <mat-toolbar>
+      <span>Registration</span>
+    </mat-toolbar>
+    <mat-card class="my-card">
+      <mat-card-content>
+        <form class="my-form">
+          <mat-form-field class="full-width">
+            <mat-label>Aadhaar Number</mat-label>
+            <input matInput placeholder="aadhaar" name = "aadhaarID" [formControl]="aadhaarID" pattern="[0-9]+" maxlength="12" minlength="12" required>
+          </mat-form-field>
+        </form>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button (click)="aadhaar()" [disabled]="invalidAadhaar()!=true" color="primary">Submit</button>
+      </mat-card-actions>
+    </mat-card>
+</div>
+
+<div class="container" *ngIf="bool4 != false">
+    <mat-toolbar>
+      <span>Registration</span>
+    </mat-toolbar>
+    <mat-card class="my-card">
+      <mat-card-content>
+        <form class="my-form">
+          <mat-form-field class="full-width">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Full Name" name = "name" [formControl]="name" minlength="4" required>
+          </mat-form-field>
+          <br />
+          <mat-form-field class="full-width">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email ID" name = "email" [formControl]="email" [email]="true" required>
+          </mat-form-field>
+          <br />
+          <mat-form-field class="full-width">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput placeholder="password" name = "password" [formControl]="password" minlength="6" required>
+          </mat-form-field>
+          <br />
+          <mat-form-field class="full-width">
+            <mat-label>Retype Password</mat-label>
+            <input type="password" matInput placeholder="password" name = "rPassword" [formControl]="rPassword" minlength="6" required>
+          </mat-form-field>
+        </form>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button (click)="details()" [disabled]="invalidDetails()!=true" color="primary">Submit</button>
+      </mat-card-actions>
+    </mat-card>
+</div>
